@@ -1,38 +1,135 @@
-.App {
-  text-align: center;
+/* Parent container for header alignment */
+.header-container{
+  display: flex;               /* Enable Flexbox */
+  align-items: center;         /* Vertically align items */
+  justify-content: space-between; /* Distribute space between items */
+  padding: 10px 20px;          /* Add some padding */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Logo section adjustments */
+.logo-name {
+  width: 150px;
+  margin-right: 10px;
+  display: flex;              /* Ensure the logo is properly aligned */
+  align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Search bar section adjustments */
+.search-bar {
+  flex: 1;                    /* Allow search bar to take up available space */
+  max-width: 1000px;           /* Limit maximum width */
+  display: flex;  
+  height: 40px;    
+     /* Align items horizontally */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Buttons and inputs styling */
+.search-bar .form-control {
+  border-radius: 20px 0 0 20px; /* Adjust border radius */
+  
+}
+
+.search-bar .btn {
+  border-radius: 0 20px 20px 0; /* Adjust border radius */
+}
+
+/* Cart button adjustments */
+.cart-button {
+  position: relative;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background-color: #dc3545; /* Red color for badge */
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+.badge {
+  font-size: 1rem;
+  margin-left: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+.card-product{
+  width: 100%; /* Ensures card takes full width within column */
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  margin: 15px 0;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+
+}
+.card-product:hover {
+  transform: scale(1.05); /* Slight zoom-in effect on hover */
+}
+.card-product img {
+  border-radius: 10px 10px 0 0; /* Round only top corners of the image */
+  height: 200px; /* Fix image height for consistency */
+  object-fit: cover; /* Ensures the image fits nicely within its container */
+} 
+
+
+.card-product .card-title {
+  font-size: 1.2rem; /* Slightly larger, bold title for visibility */
+  font-weight: bold;
+}
+
+
+/*Styling for footer*/
+
+.footer {
+  background-color: #f8f9fa; /* Light background */
+  padding: 20px 0; /* Spacing */
+  border-top: 1px solid #eaeaea; /* Subtle border */
+  color: #333; /* Dark text */
+}
+
+.footer-logo .logo-img {
+  width: 120px; /* Logo size */
+  margin-bottom: 10px;
+}
+
+.credits {
+  font-size: 0.9rem;
+  color: #6c757d; /* Muted text color */
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin: 5px 0;
+}
+
+.footer-links a {
+  color: #007bff; /* Bootstrap primary color */
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    text-align: center;
   }
-  to {
-    transform: rotate(360deg);
+
+  .footer-links {
+    margin-bottom: 20px;
   }
 }
+
